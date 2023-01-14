@@ -434,3 +434,6 @@ justify-content
 	- space-around
 	- space-between
 	- space-evenly
+	
+flex-grow
+	- 남아있는 공백을 비율별로 할당
