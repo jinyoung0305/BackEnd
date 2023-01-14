@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CSS 연습!</title>
+    </head>
+    <body>
+        <style>
+            body {
+                margin: 0;
+            }
+            ul {
+                list-style: none;
+                margin: 0;
+            }
+            ul:after {
+                content: '';
+                clear: left;
+                display: block;
+            }
+            li {
+                margin: 0;
+                width: 50%;
+                height: 400px;
+                float: left;
+            }
+            li:nth-of-type(1) {
+                background: gray;
+            }
+            li:nth-child(2) {
+                background: orange;
+            }
+            li:nth-child(3) {
+                background: blue;
+            }
+            li:nth-child(4) {
+                background: red;
+            }
+            @media all and (max-width: 740px) {
+                li {
+                    width: 100%;
+                }
+            }
+        </style>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </body>
+</html>

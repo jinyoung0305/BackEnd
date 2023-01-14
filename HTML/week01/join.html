@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>연습!</title>
+    </head>
+    <body>
+        <h1>회원가입!</h1>
+        <form method="POST" action="join_ps.html">
+            <input type="hidden" name="mode" value="join">
+            <dl>
+                <dt>아이디</dt>
+                <dd>
+                    <input type="text" name="memId" placeholder="아이디를 입력하세요.">
+                </dd>
+            </dl>
+            <dl>
+                <dt>비밀번호</dt>
+                <dd>
+                    <input type="password" name="memPw" placeholder="비밀번호를 입력하세요.">
+                </dd>
+            </dl>
+            <dl>
+                <dt>회원명</dt>
+                <dd>
+                    <input type="text" name="memNm" placeholder="회원명을 입력하세요.">
+                </dd>
+            </dl>
+            <dl>
+                <dt>성별</dt>
+                <dd>
+                    <label>
+                        <input type="radio" name="gender" value="여성" checked>여성
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="남성">남성
+                    </label> 
+                </dd>
+            </dl>
+            <dl>
+                <dt>취미</dt>
+                <dd>
+                    <input type="checkbox" name="hobby" value="축구" id="hobby1">
+                    <label for="hobby1">축구</label>
+
+                    <input type="checkbox" name="hobby" value="농구" id="hobby2">
+                    <label for="hobby2">농구</label>
+
+                    <input type="checkbox" name="hobby" value="야구" id="hobby3">
+                    <label for="hobby3">야구</label>
+
+                    <input type="checkbox" name="hobby" value="독서" id="hobby4">
+                    <label for="hobby4">독서</label>
+                </dd>
+            </dl>
+            <dl>
+                <dt>최종학력</dt>
+                <dd>
+                    <select name="school" size="2" multiple>
+                        <option value="초등">초등학교</option>
+                        <option value="중등" selected>중학교</option>
+                        <option value="고등">고등학교</option>
+                    </select>
+                </dd>
+            </dl>
+            <dl>
+                <dt>이메일</dt>
+                <dd>
+                    <input type="email" name="email" placeholder="이메일을 입력하세요.">
+                </dd>
+            </dl>
+            <dl>
+                <dt>생년월일</dt>
+                <dd>
+                    <input type="date" name="birthDy">
+                </dd>
+            </dl>
+            <dl>
+                <dt>자기소개</dt>
+                <dd>
+                    <textarea name="intro" rows="10" cols="30">값</textarea>
+                </dd>
+            </dl>
+            <button type="submit">가입하기</button>
+            <button type="reset">다시작성</button>
+        </form>
+    </body>
+</html>

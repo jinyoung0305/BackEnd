@@ -1,0 +1,436 @@
+1. HTML
+태그 -> <태그명> ~ </태그명>
+           <단일태그>
+
+속성 - 태그 안에 있는 부가적이 요소
+       - 태그의 기능과 관련있는 속성도 있다.
+
+       a : 하이퍼링크
+           - href
+       
+       img : 이미지
+           - src : 이미지 경로
+       
+       헤더태그
+       h1~h6 : 제목
+
+       문단 태그
+       p : 문단
+
+       주석 : comment - 설명
+       - 브라우저가 출력 생략
+       <!-- --> - 출력을 배제할때도 사용
+
+		하이퍼링크
+		a
+           href : 이동할 주소
+           target : 이동할 창(window)
+				_self - 링크를 클릭한 창
+				_blank : 새창
+				_parent - 부모창
+				_top - 가장 상위창
+				iframe의 name값 : 부모 -> 자식
+
+		iframe : 내부창(windiow)
+			- src : 주소
+	  
+		br : 줄바꿈
+			<br>
+			
+		경로
+		   절대 경로
+		   상대 경로 : 현재 HTML 파일 경로 -> 기준
+		   cd - change directory
+		   .. -> 상위 경로 이동
+		   
+		테이블
+		<table>
+			<thead>
+				<tr> - table rows 행
+					<th>항목명</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>데이터</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				합계, 요약...
+			</tfoot>
+		</table>
+		
+		th, td
+			- rowspan=2 -> 2개행 : 행 병합
+			- colspan=3 -> 3개 칸 : 칸 병합
+			
+		리스트
+			- 목록
+			ul (unordered list) 
+				- li (list item)
+			ol (ordered list)
+				- li (list item)
+				
+		설명 리스트
+			dl (desription list)
+				- dt 항목
+				- dd 내용
+				
+		Block 요소(element - 태그)
+		문단
+		ex) p(paragraph)
+			- 일정 공간을 가지고 있다.
+			- 줄개행
+			- 스타일로 너비와 높이 지정 O
+			- 상하좌우 외부, 내부 여백
+			
+			div
+		
+		Inline 요소
+		글
+		ex) a
+			- 공간 X (자간,행간)
+			- 줄개행 X
+			- 스타일로 너비와 높이 지정 X
+			- 좌우 외부 여백 O, 상하좌우 내부 여백 O
+			
+		span
+		
+		스타일, 스크립트 적용 대상 선택 속성
+		- class : 선택 대상이 여러개인 경우
+		
+		- id : 선택 대상이 하나인 경우
+		
+		script 태그
+			- 자바스크립트 소스를 해석하고 실행하는 태그
+			
+		style 태그
+			- stylesheet / css 를 해석하고 적용해주는 태그
+			
+		시맨틱 태그
+			- 의미를 가지고 있는 태그
+			
+			<header>
+			<aside>
+			<nav>
+			<table>
+			<form>
+			<h1...>
+			
+양식 태그(form)
+<form>~</form>
+	- 입력을 받는 태그로 주로 구성
+	- method : 방식
+		- GET(기본값) : 조회, URL 포함
+		- POST : 작성
+				   URL에 포함 X
+	- action : 제출처, 양식을 전송할 경로
+	- input
+		type
+			- text : 한줄 입력(문자)
+			
+			- radio : 한개 선택
+			- checkbox : 여러개 선택
+				- checked
+				- label
+				<label>
+					<input type="radio|checkbox">
+				</label>
+				
+			- number : 숫자
+			- email : 이메일 형식
+			- color : 색상
+			- date : 날짜
+			- hidden : 숨김 데이터
+			- password : 비밀번호
+			
+			- submit : 제출
+			- reset : 초기화
+			
+		
+		- value : 값
+		- placeholder : 안내문구
+		
+	select 
+					size - 노출 갯수 
+					multiple
+	
+		- option : value
+					selected - 선택
+					
+	textarea : 여러줄 텍스트
+		- rows : 몇행
+		- cols : 몇열
+		
+	button 
+		type
+			- button : 일반버튼
+			- submit : 제출버튼
+			- reset : 초기화버튼
+
+2. CSS
+1) 태그(요소)명으로 선택자
+	li {...}
+	
+	* -> 모든 태그 : 공통속성 - 폰트 ... 기준 레이아웃
+	
+2) 클래스명으로 선택자 (class)
+	.클래스명 {...}
+
+3) 아이디명으로 선택자 (id)
+	#아이디명 {...}
+	
+4) style 속성명으로 선택자
+	선택자 {...}
+
+선택자의 우선순위
+- 많이 선택되는 선택자가 우선순위가 낮다
+- 적게 선택되는 선택자가 우선순위가 높다
+
+태그선택자 < 클래스 선택자 < 아이디 선택자 < style 속성
+---------------------------------------------------------------------- 1일차
+
+- 우선순위 강제 적용
+!imporant - 지양함
+
+- 같은 클래스 -> 아래쪽에 정의한 스타일이 우선위 높다.
+
+5) 조상 자손 선택자
+조상 자손 {속성...}
+
+6) 부모 자식 선택자
+부모 > 자식 {속성...}
+
+7) 형제 선택자
+선택자~오른쪽 형제요소 {속성...}
+
+- 인접 형제
+선택자 + 인접 형제 요소 {속성...}
+
+8) 그룹 선택자
+선택자, 선택자, 선택자 ... {속성...}
+
+9) 가상 클래스 선택자
+- 순서, 조건, 상태 선택 
+	선택자 : first-child : 자식 요소의 첫번째
+	선택자 : last-child : 자식 요소의 마지막
+	선택자 : nth-child(숫자 or 수식)
+		홀수 : 2n+1
+		짝수 : 2n 
+	
+	선택자 : first-of-type : 첫번째
+	선택자 : last-of-type : 마지막
+	선택자 : nth-of-type(숫자 or 수식)
+    ---------------------------------------- 순서
+	
+	선택자:not(제외선택자) {제외 선택자를 제외하고 선택}
+	
+	--------------------------------------------조건
+	
+	선택자:hover : 마우스 커서가 요소 위로 올라왔을때
+	선택자:checked: checkbox, radio 선택된 상태
+	선택자:selected : 선택된 상태
+
+- 가상의 요소를 추가 선택
+	선택자:before : 자식 요소의 가장 앞에
+	선택자:after : 자식 요소의 가장 뒤에
+	
+		content: '내용'
+	
+속성
+1. 폰트
+	(1) font-size
+		- 고정사이즈: px, pt
+		- 상대사이즈 
+			- rem 
+				- 기준 사이즈 : 가장 상위 태그의 폰트 사이즈
+						사이즈 1rem
+			
+			- em
+				- 기준사이즈 : 부모 태그의 폰트 사이즈
+						사이즈 1em
+						
+	(2) color
+		글 색상
+		1) 색상명
+			pink, red, blue...
+		
+		2) RGB
+			rgb(0~255, 0~255, 0~255);
+			rgba(0~255, 0~255, 0~255, 0~1) 
+				- rgb + alpha(투명도, 0(투명)~1(불투명))
+		
+		3) HEX
+			#ff 00 00 - R G B
+			#000000 -> #000
+	
+	(3) text-align : 글 정렬
+		left : 기본값
+		center : 가운데
+		right : 오른쪽
+		justify : 양쪽 정렬(단어 사이의 간격을 기준으로 맞춤)
+		
+	(4) line-height : 행간
+						기본값 1.2 (20% -> 간격)
+						비율(1~100%), 고정사이즈(px, rem, em)
+	(5) word-spacing : 단어 사이의 간격
+	(6) letter-spacing : 문자 간격
+	
+	(7) font-weight
+		: normal
+		: bold
+		: 100~900
+		
+	(8) font-family
+		font-family : 폰트명1, 폰트명2, 폰트명3...;
+		맑은 고딕 : Windows OS, 맥 X
+		font-family : '맑은고딕', AppleGothic
+		웹폰트
+			
+2. 공간
+1) 인라인 레벨 요소(inline)
+	문장
+		- 너비, 높이 X
+		- 줄개행 X
+		- 내부 여백 (padding - 상하좌우)
+		- 외부 여백(margin - 좌우)
+		- span
+	
+2) 블록 레벨 요소(block)
+	문단
+		- 너비, 높이 O
+		- 줄개행 O
+		- 내부 여백(padding - 상하좌우)
+		- 외부 여백(margin - 상하좌우)
+	
+3) 인라인 블록 요소(inline-block)
+	- 인라인 속성 + 블록 속성도
+	- 줄개행 X
+	- 너비, 높이 O
+	- 외부 여백(margin, 상하)
+
+
+display
+	- inline;
+	- block;
+	- inline-block;
+	- none;
+		visibility : visible - 보임
+					hidden - 감추기(공간의 크기는 휴지)
+
+3. 레이아웃
+(1) box-sizing
+	width - 150px, height - 150px, 내부여백 20px, 경계선 2px
+			50 + 40 + 4 = 194px
+	내용
+		: content-box; 기본값, 내용을 기준으로 너비, 높이
+	
+	경계
+		: border-box; 경계선을 기준으로 너비, 높이
+		150 = ...(106) + 40 + 4
+		
+(2) position
+	- static : 고정 위치 배치(기본값)
+	
+	상대적 배치
+	- relative : 현재 있는 위치 기준
+		- 본인 요소 : 적용되는 요소가 상대적으로 배치
+		
+	- absolute
+		- 문서 전체 기준, 상위 태그에 상대 배치 속성이 있다면 상위태그 기준
+		
+	- fixed
+		- 뷰포트 기준(보이는 화면 기준) 상대 배치
+		
+	top, bottom, left, right
+	z-index : 층위(숫자가 커질수록 앞쪽층, 작을수록 뒤쪽층)
+	
+(3) float
+		- left
+				: 왼쪽으로 흐르듯이 배치
+		- right
+				: 오른쪽으로 흐르듯이 배치
+		- 속성이 적용 안되는 시점에 반드시
+		clear : left | right | both
+	
+4. 여백
+1) margin : 외부 여백
+
+2) padding : 내부 여백
+
+4.1 경계선
+border
+	border-width : 경계선 두께
+	border-style : solid - 직선
+					 dotted - 점선 ......
+					 dashed - -----
+	border-color : 경계선 색상
+	border : 두께 스타일 색상
+	border-radius : 경계선을 곡선 형태
+					   50% -> 원
+5. media query
+	@media all and (max-width | min-width: 너비px) {}
+	
+6. background
+	- background-color
+		1) 색상명 , 2) rgb or rgba, 3) hex, #ff0000
+		
+	- background-image
+		- url("이미지 경로");
+		
+	- bakcground-repeat
+		- repeat-x; 좌,우 반복
+		- repeat-y; 상,하 반복
+		- no-repeat; 반복X
+		
+	- background-attachment
+	
+	- background-position
+		: 좌우위치             상하위치;
+		left | center | right  top | center | bottom
+		
+	- background-size
+		너비 높이
+		cover
+	
+7. overflow
+		visible;
+		hidden
+		auto;
+		scroll;
+		overflow-x;
+		overflow-y;
+		
+		
+8. transition
+	- transition-delay : 전환 애니메이션 시작 대기
+	- trasintion-duration : 전환 애니메이션 지속 시간
+	- transition-property : 속성
+	- transition-timing-function
+	
+transform
+
+9. flexbox
+display: flex;
+
+배치 방향
+flex-direction
+	- row : 왼쪽 -> 오른쪽
+	- row-reverse : 오른쪽 -> 왼쪽
+	- column : 위 -> 아래
+	- column-reverse : 아래 -> 위
+	
+align-items
+	- stretch :  부모 높이로 맞추기
+	- flex-start : 위쪽
+	- center : 가운데
+	- flex-end : 아래쪽
+
+justify-content
+	- flex-start : 왼쪽
+	- center : 가운데
+	- flex-end : 오른쪽
+	
+	- space-around
+	- space-between
+	- space-evenly

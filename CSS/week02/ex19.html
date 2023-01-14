@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CSS 연습!</title>
+    </head>
+    <body>
+        <style>
+            .box {
+                width: 100px;
+                height: 100px;
+            }
+            .box1 {
+                background: orange;
+                /*
+                transition-property: "width";
+                transition-property: "height";
+                transition-delay: 2s;
+                transition-duration: 1.5s;
+                transition-timing-function: ease-in-out; */
+                transition: all 1.5s ease-in-out;
+            }
+            .box1:hover {
+                width: 400px;
+                height: 400px;
+                transform: rotate(360deg);
+            }
+        </style>
+        <div class="box box1"></div>
+    </body>
+</html>

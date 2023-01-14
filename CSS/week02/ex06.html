@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CSS 연습!</title>
+    </head>
+    <body>
+        <style>
+            #check:checked+label {
+                color: blue;
+            }
+            #select option:selected {
+                color: red;
+            }
+        </style>
+        <input type="checkbox" id="check" value="1">
+        <label for="check">선택!</label>
+        <br>
+        <select id="select">
+            <option value="1">선택1</option>
+            <option value="1" selected>선택2</option>
+            <option value="1">선택3</option>
+        </select>
+    </body>
+</html>

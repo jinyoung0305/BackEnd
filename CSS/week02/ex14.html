@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CSS 연습!</title>
+    </head>
+    <body>
+        <style>
+            .menu {
+                width: 100px;
+                height: 50px;
+                background: gray;
+                float: left;
+            }
+            .article {
+                background: orange;
+            }
+            #wrap:after {
+                content: '';
+                clear: left;
+                display: block
+            }
+        </style>
+        <div id="wrap">
+            <div class="menu">메뉴1</div>
+            <div class="menu">메뉴2</div>
+            <div class="menu">메뉴3</div>
+            <div class="menu">메뉴4</div>
+        </div>
+
+        <div class="article">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, a praesentium facilis corporis aliquam quidem. Sunt consequuntur aut suscipit asperiores cum ex explicabo? Cumque sint, corrupti debitis officiis quas esse!</div>
+    </body>
+</html>
