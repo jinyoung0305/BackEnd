@@ -1,0 +1,173 @@
+화살표 함수
+
+함수 객체 (일급 객체)
+1. 매개변수, 반환값으로 함수 사용
+2. 함수 객체 -> 객체를 생성
+
+상속
+객체간의 상속
+- 프로토 타입 체인을 연결
+모든 객체 [[Prototype]] - 객체간의 상속 관계
+__proto__
+
+Function 생성자 함수 객체 -> 상속 -> 일반함수
+생성자
+1. 생성자로 객체 생성하기
+new 함수 호출
+
+생성자 함수 객체 -> 객체 생성(상속)
+
+2. 생성자
+3. 생성자의 역할
+
+일반객체.__proto__ = 생성자함수객체.prototype -> 상속
+생성자 함수 객체.apply(일반객체)
+
+4. 메서드를 가진 객체를 생성하는 생성자
+5. 프로토타입
+6. 상속
+
+prototype -> 연결 -> 상속
+	constructor : 함수 원형을 참조하는 변수
+					-> 함수 호출, this 범위 변경
+					
+
+배열 객체
+Array 생성자 함수 객체 -> 객체
+
+참고) 배열
+	같은 자료 + 연속된 메모리 공간
+
+객체.속성
+객체['속성']
+
+추가
+	push : 끝에 추가
+	unshift : 앞에 추가
+
+삭제
+	pop : 끝에 있는 요소 삭제
+	shift : 앞에 있는 요소 삭제
+	
+중간 요소 추가, 삭제
+	splice
+
+배열객체
+	1) 속성명 : 숫자
+	2) length 속성 : 요소의 갯수
+	3) Array.prototype을 상속
+	
+	instanceof
+	
+	Symbol.iterator 정의 객체
+	for..of
+	
+	객체
+		{속성:값}
+
+내장객체
+
+ECMAScript - Core
+	내장 생성자
+	
+		Number
+			isNaN : 숫자가 아닌지 체크
+				NaN(Not a Number)
+				-> Number(...) -> NaN
+			parseInt : 문자 형식인 숫자 -> 실제 정수 변환
+			parseFloat : 문자 형식인 실수 -> 실제 실수 변환
+			
+	내장 객체
+		JSON
+			.parse : 문자열 형식의 JSON -> 실자바스크립트 객체로 변환
+			.stringify : 자바스크립트 객체 -> JSON 형식의 문자열로 변환
+		Math
+			수학관련 기능 모음 객체
+			abs() : 절대값
+			sign() : 부호, 음수(-1), 0, 양수(1)
+			******************
+			round(...) : 반올림
+			ceil(...) : 올림
+			floor(...) : 버림
+			
+			
+호스트 객체 - 현재 실행환경에 특화 되어 있는 객체
+window
+	location - 주소와 관련된 객체
+		hash : 검색을 위한 키워드(id 속성명)
+			   : #ID속성명
+		
+		assign() - 주소 이동(페이지 이동 기록을 저장)
+				  - href 속성도 동일
+				  
+		replace() - 주소 이동(페이지 이동 기록을 저장 안함)
+		
+		reload() - 새로고침
+		
+	history - 방문 기록과 관련된 객체
+		length : 방문 기록개수
+		scrollRestoration
+							- auto(기본값) : 스크롤 위치 기억
+							- manual : 스크롤 위치 기억 X
+		back() : 한단계 뒤로 가기
+		forward() : 한단계 앞으로 가기
+		go(숫자) 예) 2 : 2단계 앞으로 가기
+						-2 : 2단계 뒤로 가기
+		
+	screen - 화면 정보
+	navigator - 브라우저가 운영되는 환경 정보
+	
+	document - 문서를 다루는 객체
+		대상을 선택하는 메서드
+		1) 태그 요소로 선택
+			getElementsByTagName
+			
+		2) 클래스명으로 선택
+			getElementsByClassName
+			
+		3) 아이디명으로 선택
+			getElementById
+			
+		4) name 속성명으로 선택
+			getElementsByName
+			
+		5) CSS 선택자로 선택
+			querySelector("CSS 선택자") - 1개만 선택
+			querySelectorAll("CSS 선택자") - 여러개를 선택
+			
+웹브라우저 객체
+서버 -> 
+응답(HTML 텍스트 - 문자열) ->
+브라우저 Document 객체 변환 ->
+	HTML, DIV -> Document 객체 변환
+	
+변환완료 -> DOMContentLoaded  이벤트 발생 ->
+이미지, 외부 css, 외부 js, iframe, video 자원이 로드완료 ->
+load 이벤트 발생
+
+변환과정
+Document 객체 생성
+-> 검색 효울성을 위해서 배치(이진트리)
+-> DOM Tree
+
+
+이벤트 처리
+
+1. 이벤트 처리기
+	- document 객체의 속성
+	
+2. 이벤트 리스너
+	- addEventListener("이벤트명", 이벤트 핸들러 함수객체, useCapture)
+		전파 방향
+			useCapture - false : 기본값 : 이벤트 전파가 버블링 단계에서 실행
+						   - true : 이벤트 전파 캡쳐링 단계에서 실행
+3. 이벤트 객체
+	- 이벤트 발생한 요소의 정보
+	- target : 실제 클릭한 요소
+	- currentTarget : 이벤트가 바인딩되어 있는 요소
+	- preventDefault() : 기본동작 방지
+	- stopPropagation() : 이벤트 전파 중지
+	
+4. 이벤트 전파
+5. 이벤트 리스너 안의 this
+	- currentTarget과 동일한 참조값

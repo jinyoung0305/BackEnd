@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CSS 연습!</title>
+    </head>
+    <body>
+        <script>
+            window.addEventListener("DOMContentLoaded", function() {
+                const div = document.getElementById("div")
+                div.addEventListener("click", function(event) {
+                    console.log("target", event.target)
+                    console.log("currentTarget", event.currentTarget)
+                    console.log("this",this)
+                })
+            })
+        </script>
+        <div id="div" style="cursor:pointer">
+            <span>클릭!</span>
+        </div> 
+    </body>
+</html>
