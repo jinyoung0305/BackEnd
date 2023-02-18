@@ -1,0 +1,92 @@
+웹
+1. 웹 기초
+
+요청(request)
+- 브라우저 주소 요청
+요청 전문 
+헤더
+- 요청에 대한 정보
+	- 요청 URL
+	- 요청 IP
+	- 요청 방식(GET, POST...)
+	- 쿠키(브라우저가 저장하는 데이터의 한 종류)
+	- 바디에서 전송하는 데이터의 종류
+		content-type : application/x-form-urlencoded
+		content-type : appliaction/json;
+		
+- 요청에 대한 환경 정보
+	- 현재 사용중인 브라우저 정보
+
+바디 - POST에 해당
+- 요청시 전달하는 데이터
+
+name=이름&age=1234 - 요청 헤더의 content-type : application/x-form-urlencoded
+{name : 이름, age : 1234} - 요청 헤더의 content-type : appliaction/json;
+
+응답(responce)
+- 서버 응답
+
+응답전문
+
+헤더
+	- 응답 상태(응답 코드)
+		2xx
+			200 - 정상 응답
+			201 - 작성됨(POST, ...)
+			
+		3xx
+			301, 302 - dlatldlehd
+			304 - 캐시됨
+			
+		4xx
+			400 - 잘못된 요청 - 요청 방법이 잘못된 경우
+			401 - 승인되지 않은 접속 : 관리자 페이지에 접속시 승인 X
+			403 - Forbidden
+			404 - 페이지 없음
+			405 - 허용되지 않은 요청 메서드
+			
+		5xx
+			500 - 내부 서버 오류(서버 자체 오류, 코드 자체 오류)
+			502, 503 - 내부 점검중
+			
+	- 바디에 전송된 데이터의 형식(content-type)
+	- 브라우저가 할 동작을 지정
+		(페이지 이동, 새로고침, 쿠키 등록...)
+		Location : 주소 -> 주소 이동
+		Set-Cookie : 이름=값; -> 브라우저에게 쿠키 등록 명령 -> 브라우저가 쿠키 등록
+		Content-Disposition : ... -> 브라우저에게 화면 출력 X -> 바디 데이터를 다운로드 시킴
+		Refresh :  5; -> 5초마다 브라우저 새로고침
+바디
+	응답 데이터(예 - HTML, JSON, 바이너리 코드...)
+
+요청 방식
+GET - 서버에서 자원을 조회
+	- 주소창에 주소를 입력해서 조회
+	쿼리(질의문) 스트링(조회를 위한 데이터) 주소창?뒤에 있는 이름=값&이름=값
+	- DELETE
+	
+	- 전송 데이터(body X) 요청시  쿼리스트릥 형태로 서버로 전달(조회를 위한 데이터)
+
+POST - 서버에 데이터를 작성시 사용
+	- PUT : 데이터 전체 변경
+	- PATCH : 데이터 일부 수정
+
+	- 전송 데이터(body)
+
+2. 서블릿 & JSP
+
+서블릿(Servlet) - 자바의 웹기술
+
+javax.servlet
+javax.servlet.http
+	HttpServlet 클래스
+
+서블릿 등록
+web.xml
+
+기초 SQL
+1. 데이터 정의어(DDL)
+
+2. 데이터 조작어(DML)
+
+3. 내장함수, 부속질의, 뷰
