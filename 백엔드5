@@ -84,6 +84,88 @@ javax.servlet.http
 서블릿 등록
 web.xml
 
+HttpServletRequest
+	- 요청 정보(헤더)
+	- 요청 데이터
+
+HttpServletResponse
+	- 응답 정보(헤더)
+	- 응답 데이터
+
+@WebServlet("주소")
+
+사용자가 요청시 전달 데이터(GET, POST)
+HttpServletRequest(servletRequest)
+	- String getParameter(요청 name);
+
+필터 
+javax.servlet.Filter 인터페이스
+- 요청 전, 응답 후의 공통 기능을 수행
+	FilterChain dofilter
+		- 현재 요청 URL에 해당하는 다음 필터가 있으면 해당  필터를 실행
+		- 필터가 더이상 없으면 서블릿 객체의 메서드를 호출 -> 응답
+
+	사용자 요청 FilterEx01 -> FilterEx02 -> BoardServlet 요청 처리 -> 응답 처리 -> FilterEx02 -> FilterEx01
+		doFilter 메서드 상단 코드                                                                doFilter 메서드 하단 코드
+	
+	
+HttpServletRequestWrapper - HttpServletRequest 인터페이스를 기본 구현해놓은 클래스
+
+HttpServletResponseWrapper - HttpServletResponse 인터페이스를 기본 구현해놓은 클래스
+
+jsp(Java Server Page)
+- 서블릿 기술의 확장
+- JSP 편하게 작성 -> WAS(Web Application Server - TOMCAT) 에서 서블릿 클래스로 자동 번역 -> 서블릿 클래스 객체 -> 실행
+
+hello.jsp -> hello_jsp.java -> hello_jsp.class -> 실행
+														   _jsplnit()
+														   _jspService(HttpServleRequest .., HttpServletRequest ..)
+														   _jspDestroy()
+														   
+_jsplnit() : 최초 1번만 실행 - 초기화
+_jspService() : 매 요청마다 호출, 실 요청과 응답 처리
+_jspDestroy() : 변환된 서블릿 객체가 소멸될때 호출
+
+<% 자바코드 %>
+
+
+
+
+jsp파일 -> 번역 -> 서블릿클래스
+jsp 페이지 안쪽 내용 - _jspService 지역 안
+_jspService -> jsp 작성된 부분이 주로 번역
+
+내장객체
+1. HttpServletRequest request
+2. HttpServletResponse response
+3. PageContext pageContext - jsp 환경에 대한 정보를 담고 있는 개체, 다른 내장 객체를 생성할 수 있는 객체
+4. ServletContext application
+5. ServletConfig config
+6. HttpSession session
+7. JspWriter out
+8. Object page
+
+Expression Language(EL 식)
+${식...}
+
+EL 식 변수
+속성 값 -> EL변수
+
+속성을 관리하는 객체
+PageContext pageContext
+HttpServletRequest request
+HttpSession session
+ServletContext application
+	void setAttribute(String name, Object value) : 속성값을 저장
+	Object getAttribute(String name) : 속성값을 조회
+	boolean removeAttribute(String name) : 속성값을 제거
+
+pageContext > request > session > application
+
+pageScope -> pageContext의 속성만 조회
+requestScope -> request의 속성만 조회
+sessionScope -> session의 속성만 조회
+applicationScope -> application의 속성만 조회
 기초 SQL
 1. 데이터 정의어(DDL)
 

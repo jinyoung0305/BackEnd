@@ -1,6 +1,7 @@
-package servlet;
+package exam01;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,8 +12,14 @@ public class HelloServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doGet(req, resp);
-	}
+//		resp.setContentType("text/html; charset=utf-8");
+//		resp.setCharacterEncoding("UTF-8");
+//		PrintWriter out = resp.getWriter();
+//		out.print("<h1>안녕하세요</h1>");
 
+//		resp.addHeader("Location", "https://www.naver.com");
+//		resp.sendRedirect("https://www.naver.com"); // Location. https://www.naver.com
+		
+	}
+	
 }
