@@ -1,0 +1,18 @@
+apache maven -> download -> Binary zip archive 
+-> 환경변수 편집 : Path (maven vin 폴더 경로) 
+-> cd ~ web_study 폴더있는대로
+-> 명령어 : mvn archetype:generate
+-> groupId : 프로젝트의 소속
+-> artifactId :  프로젝트명(폴더) - 이 명칭으로 폴더 생성, 나머지 엔터
+
+
+이클립스 -> 빈화면에 우클릭 -> import -> import -> Maven(existing Maven PRojects) 
+-> Browser -> week02 
+
+<properties>  -> 버전 17로 교체 ->
+
+JRE System Library -> properties -> 17버전으로 교체
+
+ser/test/java -> org.koreait -> test -> AppTest2.java
+
+

@@ -166,6 +166,9 @@ pageScope -> pageContext의 속성만 조회
 requestScope -> request의 속성만 조회
 sessionScope -> session의 속성만 조회
 applicationScope -> application의 속성만 조회
+
+
+
 기초 SQL
 1. 데이터 정의어(DDL)
 

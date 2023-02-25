@@ -1,0 +1,33 @@
+스프링 프레임워크란?
+framework -> 설계의 틀
+
+스프링 프로젝트 생성하기
+1. 메이븐 프로젝트 생성
+mvn archetype:generate
+groupId : 프로젝트의 소속
+artifactId :  프로젝트명(폴더) - 이 명칭으로 폴더 생성
+
+pom.xml (Project Object Manager) -> 메이븐 설정(의존성, 플러그인)
+
+mvn test : 테스트 수행
+mvn package : 배포 파일 생성(war, jar)
+
+2. 메이븐 프로젝트 임포트
+3. 메이븐 리포지토리
+
+스프링은 객체 컨테이너
+spring-context - Dependency
+
+BeanFactory 인터페이스 - 객체 조회(getBean)
+
+ApplicationContext 인터페이스(추가적인 객체 관리 기능)
+
+AnnotationConfigApplicationContext -> 스프링 컨테이너
+- 관리하는 객체를 담고있는 컨테이너 : 객체를 스프링이 관리하기 위해서
+
+IOC(Inversion Of Control) - (객체관리)제어의 역전
+- 과거 : 객체를 생성하고 관리하는 주체 -> 개발자
+- 스프링 : 객체 생성과 관리의 제어를 개발자 대신 스프링이 해준다.
+
+싱글톤(SingleTon)객체
+- 스프링 컨테이너 객체 관리 기능
