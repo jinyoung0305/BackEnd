@@ -1,12 +1,9 @@
-package org.koreait.exam03;
-
-import java.time.LocalDateTime;
+package org.koreait.exam04;
 
 public class Member {
 	private String userId; // 아이디
 	private String userPw; // 비번
 	private String userNm; // 회원명
-	private LocalDateTime regDt; // 가입일자
 	
 	public Member(String userId, String userPw, String userNm) {
 		this.userId = userId;
@@ -31,14 +28,8 @@ public class Member {
 	public void setUserNm(String userNm) {
 		this.userNm = userNm;
 	}
-	public LocalDateTime getRegDt() {
-		return regDt;
-	}
-	public void setRegDt(LocalDateTime regDt) {
-		this.regDt = regDt;
-	}
 	@Override
 	public String toString() {
-		return "Member [userId=" + userId + ", userPw=" + userPw + ", userNm=" + userNm + ", regDt=" + regDt + "]";
+		return "Member [userId=" + userId + ", userPw=" + userPw + ", userNm=" + userNm + "]";
 	}
 }

@@ -5,6 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class main1 {
 
 	public static void main(String[] args) {
+//		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx.class, AppCtx2.class);
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx.class);
 		Member member = new Member("user01", "123456", "사용자01");
 		

@@ -1,17 +1,17 @@
 package org.koreait.exam03;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MemberListService {
-	@Autowired
+	
 	private MemberDao memberDao;
 	
-	public MemberListService() {}
-	
-//	@Autowired
-//	public MemberListService(MemberDao memberDao) {
-//		this.memberDao = memberDao;
-//	}
+	@Autowired
+	public void setMemberDao(MemberDao memberDao) {
+		this.memberDao = memberDao;
+	}
 	
 	public void print() {
 		memberDao.printMembers();
