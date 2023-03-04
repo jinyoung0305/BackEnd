@@ -1,0 +1,21 @@
+apache maven -> download -> Binary zip archive 
+-> 환경변수 편집 : Path (maven vin 폴더 경로) 
+-> cd ~ web_study 폴더있는대로
+-> 명령어 : mvn archetype:generate
+-> groupId : 프로젝트의 소속
+-> artifactId :  프로젝트명(폴더) - 이 명칭으로 폴더 생성, 나머지 엔터
+
+
+이클립스 -> 빈화면에 우클릭 -> import -> import -> Maven(existing Maven PRojects) 
+-> Browser -> week02 
+
+<properties>  -> 버전 17로 교체 ->
+
+JRE System Library -> properties -> 17버전으로 교체 -> pom.xml -> properties -> 버전 17로교체
+
+chrome -> mavenrepository.com -> spring-context 검색 -> 5.3.25 클릭 -> maven 복사 -> 이클립스 pom.xml -> dependencies 밑에 복붙 
+chrome -> mavenrepository.com -> AspectJ Weaver 검색 -> 1.9.19 클릭 -> maven 복사 -> 이클립스 pom.xml -> dependencies 밑에 복붙
+
+src/test/java -> org.koreait -> test -> AppTest2.java
+
+

@@ -1,0 +1,91 @@
+
+IOC(Inversion Of Control) : 제어의 역전
+스프링 컨테이너
+	- 설정 클래스 (@Configuration)
+		- 관리객체(@Bean)
+		
+	- 의존객체 주입(Dependency Injection)
+		- @Autowired
+			- 멤버 변수
+			- setter 메서드의 매개변수
+			- Optional
+			- 생성자의 매개변수
+			
+	ComponentScan
+		- @Component
+		- @Service
+		- @Controller
+		- @Configuration
+		- @Repository
+		- @Aspect
+		
+		- @Component, @Service 많이사용
+
+컴포넌트 스캔
+1. 스캔 대상에서 제외하거나 포함하기	
+	excludeFilters
+		- @Filter
+			- FilterType
+				- ASPECTj
+				- REGEX
+				- ANNOTION
+				- ASIGNABLE_TYPE
+
+2. 컴포넌트 스캔에 따른 충돌 처리
+
+빈 라이프 사이클과 범위
+1. 객체 생성 -> 의존 설정 -> 초기화 -> 소멸
+2. InitialzingBean, DisposableBean
+3. @Bean
+	- initMethod
+	- destroyMethod
+	
+	
+빈 객체의 생성과 관리 범위
+1. @Scope
+		- singleton : 동일 객체
+		- prototype : 새로운 객체
+		
+
+데코레이터 패턴  : 핵심기능 + 추가적인 기능		
+
+프록시 패턴 : 핵심기능의 제어와 통제
+				예) 방화벽
+AOP프로그래밍
+프록시(Proxy - 대리하다)
+
+AOP
+1. @Aspect
+	: 공통 기능을 구현하는 클래스
+	
+2. @Pointcut
+	: 공통 기능의 적용 범위
+		- execution(적용 범위 패턴)
+		
+3. @Around
+	: 공통 기능
+
+4. ProceedingJoinPoint
+	1) Object[] getArgs -> 매개변수 값
+	2) getSignature() -> 메서드의 정보
+		.getTarget
+	3) proceed() -> 메서드 호출
+
+5. 프록시 생성방식
+6. execution 명시자 표현식
+7. Advice 적용순서
+	@Order
+	- 순서가 작은 순으로 먼저 실행
+8. @Around의 Pointcut 설정과 @PointCut 재사용
+
+데이터베이스
+	관계형 데이터베이스
+	
+	데이터베이스
+		- 테이블
+		
+		
+		
+1. 데이터 정의어(DDL - Data Definition Language)
+2. 데이터 조작어(DML - Data Manipulation Language)
+	
